@@ -1,0 +1,138 @@
+body {
+  font-family: "Varela Round", sans-serif;
+  background-color: #252A40;
+}
+
+.color-light-salmon {
+  color: #FF9A71 !important;
+}
+
+.bg-light-salmon {
+  background-color: #FF9A71 !important;
+}
+
+.color-arsenic {
+  color: #3D3F54 !important;
+}
+
+.bg-arsenic {
+  background-color: #3D3F54 !important;
+}
+
+.scroll-down {
+  height: 50px;
+  width: 30px;
+  border: 2px solid rgba(var(--bs-light-rgb),var(--bs-text-opacity))!important;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  bottom: 0;
+  border-radius: 50px;
+  cursor: pointer;
+}
+.scroll-down::before,
+.scroll-down::after {
+  content: "";
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  height: 10px;
+  width: 10px;
+  transform: translate(-50%, -100%) rotate(45deg);
+  border: 2px solid white;
+  border-top: transparent;
+  border-left: transparent;
+  animation: scroll-down 1s ease-in-out infinite;
+}
+.scroll-down::before {
+  top: 30%;
+  animation-delay: 0.3s;
+  /* animation: scroll-down 1s ease-in-out infinite; */
+}
+
+@keyframes scroll-down {
+  0% {
+      /* top:20%; */
+      opacity: 0;
+  }
+  30% {
+      opacity: 1;
+  }
+  60% {
+      opacity: 1;
+  }
+  100% {
+      top: 90%;
+      opacity: 0;
+  }
+}
+
+/* SECTION content-page */
+
+/* TABS */
+.btn-tabs.active, .nav-pills .show>.btn-tabs {
+  color: #FF9A71 !important;
+  background-color: transparent !important;
+  border-bottom: 3px solid #FF9A71;
+}
+
+.btn-tabs {
+  border-radius: 0 !important;
+  color: white;
+}
+
+.btn-tabs:focus, .btn-tabs:hover {
+  color: #FF9A71 !important;
+}
+
+/* END TABS */
+
+/* EXPERIENCE */
+.ul-experience {
+  list-style: none;
+  padding-left: 0;
+}
+
+.ul-experience li {
+  position: relative;
+  padding-bottom: 1em;
+  padding-left: 2em;
+
+  &::before {
+    content: '\f111';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    width: 1.5rem;
+    height: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1em;
+    color: #FF9A71;
+    position: absolute;
+    left: -0.68rem;
+    top: 0;
+  }
+
+  /*
+  Tenemos que usar un after y no un borde común porque necesitamos cortarlo para que no sobresalga ni en el primer item ni en el último
+  */
+  &::after {
+    content: '';
+    width: 2px;
+    height: 100%;
+    background-color: #FF9A71;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+  }
+
+  &:first-child::after {
+    top: 1em;
+  }
+
+  &:last-child::after {
+    height: 1em;
+  }
+}
