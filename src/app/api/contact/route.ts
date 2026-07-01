@@ -1,7 +1,7 @@
 import { Resend } from "resend";
 
 // const resend = new Resend(process.env.RESEND_API_KEY);
-const resend = new Resend('re_SR2RdiPy_9yDVy4KmjGyWpiYnUv4mt6MF');
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(req: Request) {
   try {

@@ -54,7 +54,7 @@ export function Hero() {
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
             className="mt-8 flex flex-wrap items-center gap-3"
           >
-            <Button href={`mailto:${siteConfig.email}`} variant="primary">
+            <Button href="#contact" variant="primary">
               <Mail className="size-4" strokeWidth={1.75} aria-hidden />
               {siteConfig.availability}
             </Button>
